@@ -22,20 +22,23 @@ public class Product {
     private StringProperty title;
     private DoubleProperty price;
     private IntegerProperty quantity;
+    private IntegerProperty producerId;
 
     public Product() {}
 
-    public Product(String title, Double price, Integer quantity) {
+    public Product(String title, Double price, Integer quantity, Integer producerId) {
         this.title = new SimpleStringProperty(title);
         this.price = new SimpleDoubleProperty(price);
         this.quantity = new SimpleIntegerProperty(quantity);
+        this.producerId = new SimpleIntegerProperty(producerId);
     }
 
-    public Product(Integer id, String title, Double price, Integer quantity) {
+    public Product(Integer id, String title, Double price, Integer quantity, Integer producerId) {
         this.id = new SimpleIntegerProperty(id);
         this.title = new SimpleStringProperty(title);
         this.price = new SimpleDoubleProperty(price);
         this.quantity = new SimpleIntegerProperty(quantity);
+        this.producerId = new SimpleIntegerProperty(producerId);
     }
 
     public IntegerProperty idProperty() {
@@ -52,5 +55,9 @@ public class Product {
 
     public IntegerProperty quantityProperty() {
         return quantity;
+    }
+    
+    public IntegerProperty producerIdProperty() {
+        return producerId;
     }
 }
